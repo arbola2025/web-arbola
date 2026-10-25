@@ -17,7 +17,8 @@
 
 (function () {
   // ── MOVIMIENTO AL HACER SCROLL (mismo efecto que el inicio) ──
-  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // Anima siempre, igual que el inicio (index.html no tiene en cuenta reducir movimiento)
+  if (!('IntersectionObserver' in window)) return;
   document.documentElement.classList.add('js-anim');
 
   const SEL = '.sec-label, .sec h2, .sec-sub, .tri-card, .mod-card, .status-card, .why-item, .band-3r, .eje, .acceso, .industrias li, .r-item, .cta-band h2, .cta-band p, .cta-band .btn';
