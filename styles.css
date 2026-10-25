@@ -652,15 +652,17 @@ strong { font-weight: 600; }
 .persona-teal .persona-num { color: var(--crema); }
 .persona-teal .persona-answer { color: var(--azul-osc); border-top: 1px solid rgba(38,92,103,.3); }
 
+/* Chips y enlace centrados: si los chips pasan a dos líneas, la segunda
+   queda centrada bajo la primera */
 .challenge-row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5rem 2rem;
+  gap: 1.8rem;
   margin-top: 2.5rem;
-  flex-wrap: wrap;
+  text-align: center;
 }
-.challenge-chips { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; }
+.challenge-chips { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
 .challenge-chips li {
   padding: .55rem 1rem;
   border: 1px solid #c9d6d8;
