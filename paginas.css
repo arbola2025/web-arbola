@@ -231,3 +231,46 @@ body.subpage { padding-top: 99px; }
   .acceso { padding: 1.7rem 1.5rem; }
   .cta-band { padding: 3.5rem 1.5rem; }
 }
+
+/* ─── MOVIMIENTO ───
+   Entrada de las portadas al cargar, tarjetas que se levantan, la línea del
+   recorrido que se dibuja y la foto de 3R con un acercamiento lento. La
+   aparición al hacer scroll la maneja paginas.js con .reveal (styles.css). */
+@keyframes subir { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes acercar { from { transform: scale(1); } to { transform: scale(1.08); } }
+
+.p-hero-inner > *, .r-hero-text > * { animation: subir .8s cubic-bezier(.22,.61,.36,1) both; }
+.p-hero-inner > :nth-child(2), .r-hero-text > :nth-child(2) { animation-delay: .1s; }
+.p-hero-inner > :nth-child(3), .r-hero-text > :nth-child(3) { animation-delay: .2s; }
+.p-hero-inner > :nth-child(4), .r-hero-text > :nth-child(4) { animation-delay: .3s; }
+.p-hero-shot { animation: subir 1s .45s cubic-bezier(.22,.61,.36,1) both; }
+.p-hero-note { animation: subir .8s .7s both; }
+.r-hero-photo { animation: subir 1s .3s cubic-bezier(.22,.61,.36,1) both; }
+.r-hero-photo img:first-child { animation: acercar 18s ease-in-out infinite alternate; }
+
+.tri-card, .mod-card, .status-card, .eje, .acceso, .why-item, .band-3r { transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+.tri-card:hover, .mod-card:hover, .status-card:hover, .eje:hover, .acceso:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(38,92,103,.14); }
+.why-item:hover { transform: translateX(6px); background: rgba(246,244,238,.16); }
+.mod-icon { transition: background .25s ease; }
+.mod-icon svg { transition: stroke .25s ease; }
+.mod-card:not(.dark):hover .mod-icon { background: var(--azul); }
+.mod-card:not(.dark):hover .mod-icon svg { stroke: var(--crema); }
+.r-letter { display: inline-block; transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+.r-item:hover .r-letter { transform: translateY(-4px) rotate(-8deg); }
+
+/* El recorrido se dibuja cuando entra en pantalla (paginas.js agrega .drawn) */
+.js-anim .diag-steps.cuatro::before { transform-origin: left center; transform: scaleX(0); transition: transform 1.4s cubic-bezier(.22,.61,.36,1) .15s; }
+.js-anim .diag-steps.cuatro .diag-n { opacity: 0; transform: scale(.4); transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s ease; }
+.js-anim .diag-steps.cuatro .diag-step:nth-child(2) .diag-n { transition-delay: .45s; }
+.js-anim .diag-steps.cuatro .diag-step:nth-child(3) .diag-n { transition-delay: .8s; }
+.js-anim .diag-steps.cuatro .diag-step:nth-child(4) .diag-n { transition-delay: 1.15s; }
+.js-anim .diag-steps.cuatro.drawn::before { transform: none; }
+.js-anim .diag-steps.cuatro.drawn .diag-n { opacity: 1; transform: none; }
+@media (max-width: 900px) {
+  .js-anim .diag-steps.cuatro::before { transform-origin: center top; transform: scaleY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-hero-inner > *, .r-hero-text > *, .p-hero-shot, .p-hero-note, .r-hero-photo, .r-hero-photo img:first-child { animation: none; }
+  .tri-card:hover, .mod-card:hover, .status-card:hover, .eje:hover, .acceso:hover, .why-item:hover { transform: none; }
+}
