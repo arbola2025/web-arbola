@@ -86,6 +86,8 @@ body.subpage { padding-top: 99px; }
 .status-card p { margin: 0; font-size: 1rem; line-height: 1.55; }
 
 /* ─── ERP · FRANJA 3R ─── */
+/* Mismo espacio arriba y abajo: la franja queda centrada en su sección */
+.band-sec { padding: 4.5rem 3.5rem; }
 .band-3r {
   display: flex;
   align-items: center;
@@ -94,8 +96,15 @@ body.subpage { padding-top: 99px; }
   flex-wrap: wrap;
   padding: 2.3rem 2.8rem;
   border-radius: 24px;
-  background: var(--jade);
+  /* Degradé Verde Jade y Teal Pálido que se desplaza lento */
+  background: linear-gradient(120deg, var(--jade) 0%, var(--teal) 50%, var(--jade) 100%);
+  background-size: 220% 100%;
+  animation: brillo 10s ease-in-out infinite alternate;
 }
+@keyframes brillo { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+.band-3r:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(38,92,103,.18); }
+.flecha { display: inline-block; transition: transform .25s ease; }
+.btn:hover .flecha, .link-underline:hover .flecha { transform: translateX(5px); }
 .band-3r .band-tag { font-size: .85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--negro); }
 .band-3r h3 { font-size: 1.9rem; line-height: 1.15; color: var(--azul); margin: .4rem 0 .5rem; }
 .band-3r p { margin: 0; max-width: 780px; color: var(--negro); line-height: 1.55; }
@@ -199,6 +208,7 @@ body.subpage { padding-top: 99px; }
 
 @media (max-width: 900px) {
   body.subpage { padding-top: 82px; }
+  .band-sec { padding: 3.5rem 2rem; }
   .tri-grid, .mod-grid, .status-grid { grid-template-columns: 1fr; }
   .why-grid, .r-hero .wrap, .acceso-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .r-hero { padding: 3.5rem 2rem; }
@@ -223,6 +233,7 @@ body.subpage { padding-top: 99px; }
   .p-hero { padding: 3.5rem 1.5rem 0; }
   .p-hero-shot { padding: .7rem .7rem 0; border-radius: 16px 16px 0 0; margin-top: 2.5rem; max-height: 220px; }
   .ejes-grid { grid-template-columns: 1fr; }
+  .band-sec { padding: 3rem 1.5rem; }
   .band-3r { padding: 1.8rem 1.5rem; }
   .band-3r h3 { font-size: 1.5rem; }
   .r-hero { padding: 3rem 1.5rem; }
@@ -271,6 +282,6 @@ body.subpage { padding-top: 99px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .p-hero-inner > *, .r-hero-text > *, .p-hero-shot, .p-hero-note, .r-hero-photo, .r-hero-photo img:first-child { animation: none; }
+  .p-hero-inner > *, .r-hero-text > *, .p-hero-shot, .p-hero-note, .r-hero-photo, .r-hero-photo img:first-child, .band-3r { animation: none; }
   .tri-card:hover, .mod-card:hover, .status-card:hover, .eje:hover, .acceso:hover, .why-item:hover { transform: none; }
 }
