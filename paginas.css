@@ -281,23 +281,9 @@ body.subpage { padding-top: 99px; }
   .js-anim .diag-steps.cuatro::before { transform-origin: center top; transform: scaleY(0); }
 }
 
-/* Después de dibujarse, un punto recorre la línea en bucle y cada círculo
-   late cuando pasa (ciclo de 5s, sincronizado con los retrasos) */
-@keyframes viaje { 0% { left: 36px; opacity: 0; } 6% { opacity: 1; } 80% { left: calc(100% - (100% - 6rem) / 4 + 36px); opacity: 1; } 90%, 100% { left: calc(100% - (100% - 6rem) / 4 + 36px); opacity: 0; } }
-@keyframes viajeVertical { 0% { top: 36px; opacity: 0; } 6% { opacity: 1; } 80% { top: calc(100% - 36px); opacity: 1; } 90%, 100% { top: calc(100% - 36px); opacity: 0; } }
+/* Después de dibujarse, cada círculo late uno tras otro (ciclo de 5s) */
 @keyframes latido { 0%, 70%, 100% { box-shadow: 0 0 0 0 rgba(237,113,53,0); } 8% { box-shadow: 0 0 0 0 rgba(237,113,53,.45); } 30% { box-shadow: 0 0 0 16px rgba(237,113,53,0); } }
 .diag-steps.cuatro .diag-n { position: relative; z-index: 1; }
-.diag-steps.cuatro.drawn::after {
-  content: "";
-  position: absolute;
-  top: 30px; left: 36px;
-  width: 14px; height: 14px; margin-left: -7px;
-  border-radius: 50%;
-  background: var(--naranja);
-  box-shadow: 0 0 0 4px rgba(237,113,53,.2);
-  animation: viaje 5s linear 1.6s infinite;
-  opacity: 0;
-}
 .diag-steps.cuatro.drawn .diag-n { animation: latido 5s ease-out infinite; }
 .diag-steps.cuatro.drawn .diag-step:nth-child(1) .diag-n { animation-delay: 1.6s; }
 .diag-steps.cuatro.drawn .diag-step:nth-child(2) .diag-n { animation-delay: 2.93s; }
@@ -305,7 +291,4 @@ body.subpage { padding-top: 99px; }
 .diag-steps.cuatro.drawn .diag-step:nth-child(4) .diag-n { animation-delay: 5.6s; }
 .diag-steps.cuatro .diag-step { transition: transform .25s ease; }
 .diag-steps.cuatro .diag-step:hover { transform: translateY(-6px); }
-@media (max-width: 900px) {
-  .diag-steps.cuatro.drawn::after { left: 36px; top: 36px; margin-left: -7px; margin-top: -7px; animation-name: viajeVertical; }
-}
 
