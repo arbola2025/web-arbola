@@ -545,7 +545,7 @@ strong { font-weight: 600; }
 .diag-steps::before {
   content: "";
   position: absolute;
-  left: 36px; right: 36px; top: 35px;
+  left: 36px; right: calc((100% - 4rem) / 3 - 36px); top: 35px; /* termina en el centro del último círculo */
   height: 3px;
   border-radius: 3px;
   background: linear-gradient(to right, var(--teal), var(--jade), var(--naranja));
