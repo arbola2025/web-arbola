@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google tag (gtag.js) — Google Analytics 4 + Consent Mode v2 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBPW84SX4E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+    try {
+      if (localStorage.getItem('arbola_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    } catch (e) {}
+    gtag('config', 'G-CBPW84SX4E');
+  </script>
+
+  <title>ÁRBOLA ERP — Sistema de gestión para constructoras</title>
+  <meta name="description" content="ÁRBOLA ERP reúne proyectos, suministros, finanzas e impuestos en un sistema pensado por ingenieros para constructoras." />
+  <link rel="icon" type="image/png" href="../img/favicon.png?v=1" />
+  <link rel="apple-touch-icon" href="../img/favicon.png?v=1" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:title" content="ÁRBOLA ERP — Sistema de gestión para constructoras" />
+  <meta property="og:description" content="Tus proyectos de punta a punta, sin planillas sueltas." />
+  <meta property="og:url" content="https://arbola.com.ar/erp/" />
+  <meta property="og:image" content="https://arbola.com.ar/img/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=34" />
+  <link rel="stylesheet" href="../paginas.css?v=1" />
+</head>
+<body class="subpage">
+
+  <!-- NAVBAR -->
+  <header class="navbar scrolled solid" id="navbar">
+    <a href="../" class="logo"><img src="../img/logo-oficial.png?v=2" alt="ÁRBOLA" class="logo-img" /></a>
+    <nav class="nav-links">
+      <a href="../">Consultora</a>
+      <a href="../erp/" class="active" aria-current="page">ÁRBOLA ERP</a>
+      <a href="../3r/">ÁRBOLA 3R</a>
+      <a href="../#contacto" class="nav-cta">Contacto</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="../">Consultora</a>
+    <a href="../erp/" class="active">ÁRBOLA ERP</a>
+    <a href="../3r/">ÁRBOLA 3R</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+
+  <!-- PORTADA -->
+  <section class="p-hero">
+    <div class="p-hero-inner">
+      <span class="badge badge-light">ÁRBOLA ERP · Industria de la construcción</span>
+      <h1>Tus proyectos de punta a punta, sin planillas sueltas</h1>
+      <p class="p-hero-sub">Proyectos, suministros, finanzas e impuestos en un sistema pensado por ingenieros para constructoras.</p>
+      <div class="p-hero-actions">
+        <a href="mailto:hola@arbola.com.ar?subject=Solicitud%20de%20demo%20%C3%81RBOLA%20ERP" class="btn btn-fill">Pedí una demo</a>
+        <a href="#que-incluye" class="btn btn-ghost">Ver qué incluye ↓</a>
+      </div>
+    </div>
+    <figure class="p-hero-shot">
+      <img src="../img/erp-panel.jpg" alt="Indicadores económicos, pendientes por autorizar, avance de proyectos y partes del día en ÁRBOLA ERP" width="2326" height="924" />
+    </figure>
+    <p class="p-hero-note">Datos de ejemplo</p>
+  </section>
+
+  <!-- CÓMO PIENSA EL SISTEMA -->
+  <section class="sec sec-crema">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-label">Cómo piensa el sistema</div>
+          <h2>Alcance, costo y tiempo, siempre juntos</h2>
+        </div>
+        <p class="sec-sub">Elegís un proyecto y todo el sistema se filtra. Indicadores, alertas y movimientos de esa obra.</p>
+      </div>
+      <div class="tri-grid">
+        <div class="tri-card">
+          <h3>Alcance</h3>
+          <p>Avance físico contra financiero de cada obra, para ver a tiempo dónde se desvía.</p>
+        </div>
+        <div class="tri-card">
+          <h3>Costo</h3>
+          <p>Certificado contra consumido, desvío contra presupuesto y margen, al día.</p>
+        </div>
+        <div class="tri-card">
+          <h3>Tiempo</h3>
+          <p>Partes diarios de cada proyecto y alertas de lo que vence o se atrasa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ INCLUYE -->
+  <section class="sec sec-blanca" id="que-incluye">
+    <div class="wrap">
+      <div class="sec-label">Qué incluye</div>
+      <h2>Todo lo que pasa en la obra y en la oficina</h2>
+      <div class="mod-grid" style="margin-top: 2.6rem;">
+        <article class="mod-card">
+          <span class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M9 21v-6h6v6"></path></svg></span>
+          <h3>Proyectos</h3>
+          <p>Centro de control y partes diarios. El avance físico y financiero de cada obra.</p>
+        </article>
+        <article class="mod-card">
+          <span class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle><path d="M2 3h3l2.7 12.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"></path></svg></span>
+          <h3>Suministros</h3>
+          <p>Cotizaciones, órdenes de compra, acopios y facturas. Proveedores con cuenta corriente y stock por pañol con QR.</p>
+        </article>
+        <article class="mod-card">
+          <span class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg></span>
+          <h3>Finanzas</h3>
+          <p>Caja y bancos, certificados a clientes y subcontratistas, costo laboral, gastos generales y resultados.</p>
+        </article>
+        <article class="mod-card">
+          <span class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"></path><path d="M14 2v6h6"></path><path d="M9 13h6M9 17h6"></path></svg></span>
+          <h3>Impuestos</h3>
+          <p>Libros IVA y posición, Ingresos Brutos, retenciones y percepciones, con sus vencimientos.</p>
+        </article>
+        <article class="mod-card">
+          <span class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"></path><path d="M3 8v8l9 5 9-5V8"></path><path d="M12 13v8"></path></svg></span>
+          <h3>Registros</h3>
+          <p>Bienes de uso, clientes, materiales, operarios y pañoles, todo en un mismo lugar.</p>
+        </article>
+        <article class="mod-card dark">
+          <span class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg></span>
+          <h3>Panel de control personalizado</h3>
+          <p>Cada persona arma su inicio con los indicadores y accesos rápidos que usa todos los días, según su rol.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUYE ÁRBOLA 3R -->
+  <section class="sec sec-crema" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="band-3r">
+        <div>
+          <span class="band-tag">Incluye ÁRBOLA 3R</span>
+          <h3>Tu material de rezago, convertido en impacto</h3>
+          <p>Pasás de ERP a 3R con un clic y comparten el catálogo de materiales. El material de rezago de tu obra llega a una escuela, un comedor o una cooperativa, y cada entrega queda registrada para que sepas a quién ayudaste.</p>
+        </div>
+        <a href="../3r/" class="btn btn-azul">Conocé ÁRBOLA 3R →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ -->
+  <section class="sec sec-dark">
+    <div class="wrap why-grid">
+      <div>
+        <div class="sec-label sec-label-light">Por qué ÁRBOLA ERP</div>
+        <h2>Lo diseñaron ingenieros que gestionan obras</h2>
+        <p style="margin-top: 1.2rem; color: var(--crema);">No es un sistema genérico adaptado a la construcción. Nace de la consultoría, de las mismas planillas, demoras y faltantes que vemos en cada empresa que acompañamos.</p>
+      </div>
+      <div>
+        <div class="why-item"><span class="why-n">01</span><p><strong>Un inicio para cada rol.</strong> Administración y jefes de proyecto ven lo suyo, con sus accesos rápidos y sus permisos.</p></div>
+        <div class="why-item"><span class="why-n">02</span><p><strong>Implementación acompañada.</strong> Lo ponemos en marcha con tu equipo, no te dejamos solo con un usuario y una contraseña.</p></div>
+        <div class="why-item"><span class="why-n">03</span><p><strong>Hecho en Argentina.</strong> En castellano, con la lógica fiscal local.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN QUÉ ESTAMOS -->
+  <section class="sec sec-crema">
+    <div class="wrap">
+      <div class="sec-label">En qué estamos</div>
+      <h2>Te contamos con transparencia dónde está el producto</h2>
+      <div class="status-grid" style="margin-top: 2.2rem;">
+        <div class="status-card">
+          <span class="pill pill-jade">Disponible en demo</span>
+          <p>Proyectos, compras, stock, partes diarios y finanzas, funcionando de punta a punta.</p>
+        </div>
+        <div class="status-card">
+          <span class="pill pill-teal">En desarrollo</span>
+          <p>Integración con AFIP para facturación electrónica.</p>
+        </div>
+        <div class="status-card">
+          <span class="pill pill-borde">Próximamente</span>
+          <p>Registro de materiales recuperados desde cada obra, directo a ÁRBOLA 3R, y gestión de personal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Gestioná tus obras desde un solo lugar</h2>
+        <p>Sumate al acceso anticipado y te mostramos el sistema con tus propios casos.</p>
+      </div>
+      <a href="mailto:hola@arbola.com.ar?subject=Solicitud%20de%20demo%20%C3%81RBOLA%20ERP" class="btn btn-crema">Pedí una demo</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../img/logo-blanco.png?v=2" alt="ÁRBOLA" class="footer-logo" />
+        <p class="footer-slogan">Raíces firmes, gestión sostenible.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="footer-col-title">Consultora</span>
+          <a href="../#quienes-somos">Quiénes somos</a>
+          <a href="../#que-hacemos">Qué hacemos</a>
+          <a href="../#diagnostico">Diagnóstico</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Soluciones</span>
+          <a href="../erp/">ÁRBOLA ERP</a>
+          <a href="../3r/">ÁRBOLA 3R</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Contacto</span>
+          <a href="mailto:hola@arbola.com.ar">hola@arbola.com.ar</a>
+          <a href="../#contacto">Agendá una reunión</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Seguinos</span>
+          <a href="https://instagram.com/somosarbola" target="_blank" rel="noopener">Instagram · @somosarbola</a>
+          <a href="https://www.linkedin.com/company/120933951/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ÁRBOLA Consultoría de Gestión</p>
+      <a href="#navbar">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
+    <div class="cookie-banner-inner">
+      <p class="cookie-text">
+        Usamos cookies propias y de Google Analytics para entender cómo se usa el sitio y mejorarlo.
+        Podés aceptarlas o rechazarlas cuando quieras.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn-cookie btn-cookie-reject" id="cookie-reject">Rechazar</button>
+        <button type="button" class="btn-cookie btn-cookie-accept" id="cookie-accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../paginas.js?v=1"></script>
+</body>
+</html>
