@@ -9,9 +9,9 @@
   --teal:    #91d0d8;
   --jade:    #80c5b0;
   --blanco:  #ffffff;
-  --borde:   #e0ddd9;
+  /* Bordes y fondos suaves: colores de la paleta con transparencia */
+  --borde:   rgba(80, 77, 73, .16);
   --fondo:   #f6f4ee;
-  --azul-osc: #1f4c55;
   /* Frases y textos especiales. El manual pide The Seasons, que no tiene
      licencia web: DM Serif Display (libre) es la serif de la familia DM */
   --serif: 'DM Serif Display', Georgia, serif;
@@ -270,7 +270,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--blanco);
   border-color: var(--naranja);
 }
-.btn-fill:hover { background: #c9602d; border-color: #c9602d; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(237,113,53,.3); }
+.btn-fill:hover { background: var(--azul); border-color: var(--azul); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(237,113,53,.3); }
 
 .btn-ghost {
   background: transparent;
@@ -289,7 +289,7 @@ a { text-decoration: none; color: inherit; }
   border-color: var(--azul);
   font-size: 1rem;
 }
-.btn-azul:hover { background: var(--azul-osc); border-color: var(--azul-osc); transform: translateY(-2px); }
+.btn-azul:hover { background: var(--naranja); border-color: var(--naranja); color: var(--blanco); transform: translateY(-2px); }
 
 .link-underline {
   font-weight: 700;
@@ -650,7 +650,7 @@ strong { font-weight: 600; }
 .persona-crema .persona-answer { color: var(--azul); border-top: 1px solid var(--borde); }
 .persona-teal { background: var(--teal); color: var(--azul); }
 .persona-teal .persona-num { color: var(--crema); }
-.persona-teal .persona-answer { color: var(--azul-osc); border-top: 1px solid rgba(38,92,103,.3); }
+.persona-teal .persona-answer { color: var(--negro); border-top: 1px solid rgba(38,92,103,.3); }
 
 /* Chips y enlace centrados: si los chips pasan a dos líneas, la segunda
    queda centrada bajo la primera */
@@ -665,7 +665,7 @@ strong { font-weight: 600; }
 .challenge-chips { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
 .challenge-chips li {
   padding: .55rem 1rem;
-  border: 1px solid #c9d6d8;
+  border: 1px solid rgba(38, 92, 103, .25);
   border-radius: 100px;
   font-size: .88rem;
   color: var(--azul);
@@ -735,13 +735,13 @@ strong { font-weight: 600; }
   font-size: 1rem;
   color: var(--azul);
   background: var(--blanco);
-  border: 1px solid #b9c4c5;
+  border: 1px solid rgba(38, 92, 103, .35);
   border-radius: 12px;
   padding: .85rem 1rem;
   transition: border-color .2s, box-shadow .2s;
 }
 .field input::placeholder,
-.field textarea::placeholder { color: #7d8a8c; }
+.field textarea::placeholder { color: rgba(80, 77, 73, .8); }
 .field input:focus,
 .field textarea:focus {
   outline: none;
@@ -759,7 +759,7 @@ strong { font-weight: 600; }
   min-height: 1.2em;
 }
 .form-status.ok  { color: var(--azul) !important; font-weight: 600; }
-.form-status.err { color: #b3441a !important; }
+.form-status.err { color: var(--azul) !important; font-weight: 700; }
 
 .contact-alt {
   display: flex;
@@ -994,7 +994,7 @@ strong { font-weight: 600; }
   font-weight: 700;
   transition: background .2s;
 }
-.tip-link:hover { background: var(--azul-osc); }
+.tip-link:hover { background: var(--naranja); color: var(--blanco); }
 .footer-top {
   display: flex;
   justify-content: space-between;
@@ -1239,7 +1239,7 @@ strong { font-weight: 600; }
   transition: background .2s, color .2s, border-color .2s, transform .15s;
 }
 .btn-cookie-accept { background: var(--naranja); color: #fff; }
-.btn-cookie-accept:hover { background: #c9602d; transform: translateY(-1px); }
+.btn-cookie-accept:hover { background: var(--azul); transform: translateY(-1px); }
 .btn-cookie-reject { background: transparent; color: var(--gris); border-color: var(--borde); }
 .btn-cookie-reject:hover { border-color: var(--gris); color: var(--negro); }
 
