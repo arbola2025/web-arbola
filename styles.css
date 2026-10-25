@@ -1257,3 +1257,38 @@ strong { font-weight: 600; }
   .cookie-banner-inner { flex-direction: column; align-items: stretch; gap: 1rem; padding: 1.1rem; }
   .cookie-actions { justify-content: flex-end; }
 }
+
+/* ─── DIAGNÓSTICO: RECORRIDO ANIMADO (mismo movimiento que Cómo funciona de 3R) ───
+   El script agrega .anim y, al entrar en pantalla, .drawn. La línea se dibuja,
+   los círculos aparecen en orden y después un punto recorre la línea en bucle;
+   cada círculo late cuando pasa (ciclo de 5s, retrasos sincronizados). */
+@keyframes recorrido3  { 0% { left: 36px; opacity: 0; } 6% { opacity: 1; } 80% { left: calc(100% - (100% - 4rem) / 3 + 36px); opacity: 1; } 90%, 100% { left: calc(100% - (100% - 4rem) / 3 + 36px); opacity: 0; } }
+@keyframes recorridoV3 { 0% { top: 36px; opacity: 0; } 6% { opacity: 1; } 80% { top: calc(100% - 36px); opacity: 1; } 90%, 100% { top: calc(100% - 36px); opacity: 0; } }
+@keyframes latido3 { 0%, 70%, 100% { box-shadow: 0 0 0 0 rgba(237,113,53,0); } 8% { box-shadow: 0 0 0 0 rgba(237,113,53,.45); } 30% { box-shadow: 0 0 0 16px rgba(237,113,53,0); } }
+.diag-steps.anim::before { transform-origin: left center; transform: scaleX(0); transition: transform 1.4s cubic-bezier(.22,.61,.36,1) .15s; }
+.diag-steps.anim .diag-n { position: relative; z-index: 1; opacity: 0; transform: scale(.4); transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s ease; }
+.diag-steps.anim .diag-step:nth-child(2) .diag-n { transition-delay: .6s; }
+.diag-steps.anim .diag-step:nth-child(3) .diag-n { transition-delay: 1.15s; }
+.diag-steps.anim.drawn::before { transform: none; }
+.diag-steps.anim.drawn .diag-n { opacity: 1; transform: none; animation: latido3 5s ease-out infinite; }
+.diag-steps.anim.drawn .diag-step:nth-child(1) .diag-n { animation-delay: 1.6s; }
+.diag-steps.anim.drawn .diag-step:nth-child(2) .diag-n { animation-delay: 3.6s; }
+.diag-steps.anim.drawn .diag-step:nth-child(3) .diag-n { animation-delay: 5.6s; }
+.diag-steps.anim.drawn::after {
+  content: "";
+  position: absolute;
+  top: 30px; left: 36px;
+  width: 14px; height: 14px; margin-left: -7px;
+  border-radius: 50%;
+  background: var(--naranja);
+  box-shadow: 0 0 0 4px rgba(237,113,53,.2);
+  animation: recorrido3 5s linear 1.6s infinite;
+  opacity: 0;
+}
+.diag-steps.anim .diag-step { transition: transform .25s ease; }
+.diag-steps.anim .diag-step:hover { transform: translateY(-6px); }
+@media (max-width: 600px) {
+  .diag-steps.anim::before { transform-origin: center top; transform: scaleY(0); }
+  .diag-steps.anim.drawn::before { transform: none; }
+  .diag-steps.anim.drawn::after { left: 36px; top: 36px; margin-top: -7px; animation-name: recorridoV3; }
+}
