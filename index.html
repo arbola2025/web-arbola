@@ -48,7 +48,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=34" />
+  <link rel="stylesheet" href="styles.css?v=35" />
 </head>
 <body>
 
@@ -716,6 +716,16 @@
       el.classList.add('reveal');
       observer.observe(el);
     });
+
+    // El recorrido del diagnóstico se dibuja al entrar en pantalla y después
+    // un punto lo recorre en bucle (mismo movimiento que Cómo funciona de 3R)
+    const recorrido = document.querySelector('#diagnostico .diag-steps');
+    if (recorrido) {
+      recorrido.classList.add('anim');
+      new IntersectionObserver(([e], o) => {
+        if (e.isIntersecting) { recorrido.classList.add('drawn'); o.disconnect(); }
+      }, { threshold: 0.35 }).observe(recorrido);
+    }
   </script>
 
   <script>
