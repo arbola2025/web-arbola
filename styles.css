@@ -133,7 +133,7 @@ a { text-decoration: none; color: inherit; }
 .hero {
   position: relative;
   min-height: 100vh;
-  background: var(--azul);
+  background: var(--azul) url('img/hero-degrade.jpg') center / cover no-repeat;
   display: flex;
   align-items: flex-end;
   padding: 120px 3.5rem 7rem;
@@ -158,10 +158,10 @@ a { text-decoration: none; color: inherit; }
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(to top right,
-    rgba(38, 92, 103, 0.97) 0%,
-    rgba(38, 92, 103, 0.92) 28%,
-    rgba(38, 92, 103, 0.55) 50%,
-    rgba(38, 92, 103, 0) 72%);
+    rgba(38, 92, 103, 0.90) 0%,
+    rgba(38, 92, 103, 0.75) 25%,
+    rgba(38, 92, 103, 0.30) 45%,
+    rgba(38, 92, 103, 0) 60%);
 }
 
 .hero-inner {
@@ -851,6 +851,15 @@ strong { font-weight: 600; }
 @media (max-width: 900px) {
   .sec        { padding: 5rem 2rem; }
   .hero       { padding: 100px 2rem 5rem; }
+  /* En tablet y celular el texto ocupa todo el ancho: el scrim va de abajo
+     hacia arriba para que no quede texto sobre el naranja o el celeste */
+  .hero::before {
+    background: linear-gradient(to top,
+      rgba(38, 92, 103, 0.92) 0%,
+      rgba(38, 92, 103, 0.85) 45%,
+      rgba(38, 92, 103, 0.40) 72%,
+      rgba(38, 92, 103, 0) 92%);
+  }
   .navbar     { padding: 0.7rem 2rem; }
   .logo-img   { height: 60px; }
   .values-bar { padding: 1rem 2rem; gap: 1rem; }
