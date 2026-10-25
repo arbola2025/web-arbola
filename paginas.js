@@ -16,6 +16,40 @@
 })();
 
 (function () {
+  // ── MOVIMIENTO AL HACER SCROLL (mismo efecto que el inicio) ──
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('js-anim');
+
+  const SEL = '.sec-label, .sec h2, .sec-sub, .tri-card, .mod-card, .status-card, .why-item, .band-3r, .eje, .acceso, .industrias li, .r-item, .cta-band h2, .cta-band p, .cta-band .btn';
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('visible');
+      observer.unobserve(el);
+      // al terminar la entrada, quitar las clases para no frenar el hover de las tarjetas
+      el.addEventListener('transitionend', () => { el.classList.remove('reveal', 'visible'); el.style.transitionDelay = ''; }, { once: true });
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(SEL).forEach(el => {
+    // Escalonado entre hermanos de una misma grilla
+    const i = [...el.parentElement.children].filter(c => c.matches(SEL)).indexOf(el);
+    if (i > 0) el.style.transitionDelay = (Math.min(i, 5) * 0.09) + 's';
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // El recorrido de "Cómo funciona" se dibuja cuando entra en pantalla
+  const steps = document.querySelector('.diag-steps.cuatro');
+  if (steps) {
+    new IntersectionObserver(([e], o) => {
+      if (e.isIntersecting) { steps.classList.add('drawn'); o.disconnect(); }
+    }, { threshold: 0.35 }).observe(steps);
+  }
+})();
+
+(function () {
   // ── BANNER DE COOKIES (Consent Mode v2) ──
   var KEY = 'arbola_cookie_consent';
   var banner = document.getElementById('cookie-banner');
