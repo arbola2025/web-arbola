@@ -851,6 +851,15 @@ strong { font-weight: 600; }
 @media (max-width: 900px) {
   .sec        { padding: 5rem 2rem; }
   .hero       { padding: 100px 2rem 5rem; }
+  /* En tablet y celular el texto ocupa todo el ancho: el scrim va de abajo
+     hacia arriba para que no quede texto sobre el naranja o el celeste */
+  .hero::before {
+    background: linear-gradient(to top,
+      rgba(38, 92, 103, 0.92) 0%,
+      rgba(38, 92, 103, 0.85) 45%,
+      rgba(38, 92, 103, 0.40) 72%,
+      rgba(38, 92, 103, 0) 92%);
+  }
   .navbar     { padding: 0.7rem 2rem; }
   .logo-img   { height: 60px; }
   .values-bar { padding: 1rem 2rem; gap: 1rem; }
