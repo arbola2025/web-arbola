@@ -281,14 +281,13 @@ body.subpage { padding-top: 99px; }
   .js-anim .diag-steps.cuatro::before { transform-origin: center top; transform: scaleY(0); }
 }
 
-/* Después de dibujarse, cada círculo late uno tras otro (ciclo de 5s) */
-@keyframes latido { 0%, 70%, 100% { box-shadow: 0 0 0 0 rgba(237,113,53,0); } 8% { box-shadow: 0 0 0 0 rgba(237,113,53,.45); } 30% { box-shadow: 0 0 0 16px rgba(237,113,53,0); } }
+/* Cada círculo se expande en el momento en que aparece */
+@keyframes aparece { 0% { box-shadow: 0 0 0 0 rgba(237,113,53,.5); } 100% { box-shadow: 0 0 0 18px rgba(237,113,53,0); } }
 .diag-steps.cuatro .diag-n { position: relative; z-index: 1; }
-.diag-steps.cuatro.drawn .diag-n { animation: latido 5s ease-out infinite; }
-.diag-steps.cuatro.drawn .diag-step:nth-child(1) .diag-n { animation-delay: 1.6s; }
-.diag-steps.cuatro.drawn .diag-step:nth-child(2) .diag-n { animation-delay: 2.93s; }
-.diag-steps.cuatro.drawn .diag-step:nth-child(3) .diag-n { animation-delay: 4.27s; }
-.diag-steps.cuatro.drawn .diag-step:nth-child(4) .diag-n { animation-delay: 5.6s; }
+.diag-steps.cuatro.drawn .diag-n { animation: aparece 1s ease-out both; }
+.diag-steps.cuatro.drawn .diag-step:nth-child(2) .diag-n { animation-delay: .45s; }
+.diag-steps.cuatro.drawn .diag-step:nth-child(3) .diag-n { animation-delay: .8s; }
+.diag-steps.cuatro.drawn .diag-step:nth-child(4) .diag-n { animation-delay: 1.15s; }
 .diag-steps.cuatro .diag-step { transition: transform .25s ease; }
 .diag-steps.cuatro .diag-step:hover { transform: translateY(-6px); }
 
