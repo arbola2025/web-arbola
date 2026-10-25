@@ -929,6 +929,20 @@ strong { font-weight: 600; }
 .team-card > p { font-size: .85rem; color: var(--gris); margin-bottom: .7rem; line-height: 1.4; }
 .team-card .card-link { color: var(--naranja); }
 
+/* Foto grupal: los nombres van debajo, alineados con cada persona */
+.team-group {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--crema);
+}
+.team-group img { display: block; width: 100%; height: auto; }
+.team-grid-names {
+  padding-inline: 11%;
+  margin-top: 1.2rem;
+  gap: 1.2rem;
+}
+.team-grid-names .team-card { text-align: center; padding: 1.1rem 1rem 1.2rem; }
+
 .team-detail {
   margin-top: 2.5rem;
   padding: 2.5rem;
@@ -1115,6 +1129,9 @@ strong { font-weight: 600; }
   .footer-cols { gap: 2rem; flex-direction: column; }
   .form-row    { flex-direction: column; gap: 0; }
   .team-grid   { grid-template-columns: 1fr; }
+  .team-grid-names { padding-inline: 0; gap: .8rem; }
+  .team-group  { border-radius: 18px; }
+  .team-group img { aspect-ratio: 16 / 9; object-fit: cover; }
   .team-detail { padding: 1.8rem; }
   .outcomes-grid { grid-template-columns: 1fr; }
   html { scroll-padding-top: 80px; }
