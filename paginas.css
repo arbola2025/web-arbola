@@ -160,6 +160,28 @@ body.subpage { padding-top: 99px; }
 .cta-band .wrap { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 2rem 3rem; flex-wrap: wrap; }
 .cta-band h2 { color: var(--crema); text-transform: uppercase; letter-spacing: -1px; line-height: 1.05; }
 .cta-band p { margin: .6rem 0 0; color: var(--crema); font-style: italic; font-size: 1.1rem; }
+/* Pedido de demo del ERP: texto a la izquierda, formulario en tarjeta a la derecha */
+.demo-band { padding: 6rem 3.5rem; scroll-margin-top: 80px; }
+.cta-band .demo-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 4rem; align-items: center; }
+.demo-pasos { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-direction: column; gap: .9rem; }
+.demo-pasos li { position: relative; padding-left: 2rem; color: var(--crema); font-size: 1.05rem; line-height: 1.45; }
+.demo-pasos li::before { content: ""; position: absolute; left: 0; top: .55em; width: 1.1rem; height: 2px; background: var(--naranja); }
+.demo-form { background: var(--blanco); border-radius: 24px; padding: 2.4rem; box-shadow: 0 24px 60px rgba(0,0,0,.18); }
+.demo-form .field select {
+  font-family: 'DM Sans', sans-serif; font-size: 1rem; color: var(--azul); background: var(--blanco);
+  border: 1px solid rgba(38, 92, 103, .35); border-radius: 12px; padding: .85rem 1rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.demo-form .field select:invalid { color: rgba(80, 77, 73, .8); }
+.demo-form .field select:focus { outline: none; border-color: var(--azul); box-shadow: 0 0 0 3px rgba(38,92,103,.18); }
+.demo-form .field textarea { min-height: 90px; }
+.demo-form .form-row .field { min-width: 0; }
+.demo-form .field select { width: 100%; }
+@media (max-width: 900px) {
+  .cta-band .demo-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .demo-band { padding: 4rem 1.5rem; }
+  .demo-form { padding: 1.6rem; }
+}
 .btn-crema { background: var(--crema); color: var(--azul); border-color: var(--crema); font-size: 1rem; }
 .btn-crema:hover { background: var(--naranja); border-color: var(--naranja); color: var(--blanco); transform: translateY(-2px); }
 

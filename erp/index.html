@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css?v=37" />
-  <link rel="stylesheet" href="../paginas.css?v=17" />
+  <link rel="stylesheet" href="../paginas.css?v=18" />
 </head>
 <body class="subpage">
 
@@ -77,12 +77,12 @@
       <h1>Tus proyectos de punta a punta, con toda la información conectada</h1>
       <p class="p-hero-sub">Proyectos, suministros, finanzas e impuestos en un sistema pensado por ingenieros para constructoras.</p>
       <div class="p-hero-actions">
-        <a href="mailto:hola@arbola.com.ar?subject=Solicitud%20de%20demo%20%C3%81RBOLA%20ERP" class="btn btn-fill">Pedí una demo</a>
+        <a href="#demo" class="btn btn-fill">Pedí una demo</a>
         <a href="#que-incluye" class="btn btn-borde">Ver qué incluye ↓</a>
       </div>
     </div>
     <figure class="p-hero-shot">
-      <img src="../img/erp-panel.jpg" alt="Indicadores económicos, pendientes por autorizar, avance de proyectos y partes del día en ÁRBOLA ERP" width="2326" height="924" />
+      <img src="../img/erp-panel.jpg?v=2" alt="Indicadores económicos, pendientes por autorizar, avance de proyectos y partes del día en ÁRBOLA ERP" width="2326" height="924" />
     </figure>
     <p class="p-hero-note">Datos de ejemplo</p>
   </section>
@@ -207,13 +207,76 @@
   </section>
 
   <!-- CIERRE -->
-  <section class="cta-band">
-    <div class="wrap">
-      <div>
+  <section class="cta-band demo-band" id="demo">
+    <div class="wrap demo-grid">
+      <div class="demo-text">
         <h2>Gestioná tus obras desde un solo lugar</h2>
         <p>Sumate al acceso anticipado y te mostramos el sistema con tus propios casos.</p>
+        <ul class="demo-pasos">
+          <li>Te contactamos para coordinar día y horario.</li>
+          <li>Recorremos el sistema con ejemplos de tu empresa.</li>
+          <li>Resolvemos tus dudas sobre la implementación.</li>
+        </ul>
       </div>
-      <a href="mailto:hola@arbola.com.ar?subject=Solicitud%20de%20demo%20%C3%81RBOLA%20ERP" class="btn btn-crema">Pedí una demo</a>
+
+      <form class="contact-form demo-form js-form" id="demoForm" action="https://formsubmit.co/ajax/hola@arbola.com.ar" method="POST" data-evento="demo_erp">
+        <input type="hidden" name="_subject" value="Pedido de demo ÁRBOLA ERP">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="df-nombre">Nombre y apellido</label>
+            <input id="df-nombre" name="Nombre" type="text" required placeholder="Tu nombre" />
+          </div>
+          <div class="field">
+            <label for="df-empresa">Empresa</label>
+            <input id="df-empresa" name="Empresa" type="text" required placeholder="Nombre de tu empresa" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="df-email">Email</label>
+            <input id="df-email" name="Email" type="email" required placeholder="tu@email.com" />
+          </div>
+          <div class="field">
+            <label for="df-tel">Teléfono <span class="opt">(opcional)</span></label>
+            <input id="df-tel" name="Teléfono" type="tel" placeholder="+54 9 11 ..." />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="df-rol">Tu rol</label>
+            <select id="df-rol" name="Rol" required>
+              <option value="" disabled selected>Elegí una opción</option>
+              <option>Dueño o dirección</option>
+              <option>Administración</option>
+              <option>Jefe de obra o de proyecto</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="df-obras">Obras en curso</label>
+            <select id="df-obras" name="Obras en curso" required>
+              <option value="" disabled selected>Elegí una opción</option>
+              <option>1 a 3</option>
+              <option>4 a 10</option>
+              <option>Más de 10</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="df-msg">¿Qué te gustaría ver en la demo? <span class="opt">(opcional)</span></label>
+          <textarea id="df-msg" name="Mensaje" rows="3" placeholder="Compras, control de costos, partes diarios, impuestos…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-fill form-submit">Pedí tu demo</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -268,6 +331,6 @@
     </div>
   </div>
 
-  <script src="../paginas.js?v=3"></script>
+  <script src="../paginas.js?v=4"></script>
 </body>
 </html>

@@ -51,6 +51,42 @@
 })();
 
 (function () {
+  // ── FORMULARIOS (pedido de demo) — mismo envío que el contacto del inicio ──
+  document.querySelectorAll('.js-form').forEach(function (form) {
+    const status = form.querySelector('.form-status');
+    const btn = form.querySelector('.form-submit');
+    form.addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      status.className = 'form-status';
+      status.textContent = '';
+      const label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      try {
+        const res = await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
+        if (res.ok) {
+          form.reset();
+          status.className = 'form-status ok';
+          status.textContent = '¡Gracias! Recibimos tu pedido y te vamos a escribir para coordinar la demo.';
+          // Cuenta el pedido en Analytics (respeta lo que la persona eligió en el aviso de cookies)
+          if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: form.dataset.evento });
+        } else {
+          const data = await res.json().catch(() => ({}));
+          status.className = 'form-status err';
+          status.textContent = data.message || 'No pudimos enviar el pedido. Por favor, probá de nuevo en unos minutos.';
+        }
+      } catch (err) {
+        status.className = 'form-status err';
+        status.textContent = 'Hubo un problema de conexión. Por favor, probá de nuevo.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    });
+  });
+})();
+
+(function () {
   // ── BANNER DE COOKIES (Consent Mode v2) ──
   var KEY = 'arbola_cookie_consent';
   var banner = document.getElementById('cookie-banner');
