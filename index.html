@@ -446,7 +446,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 ÁRBOLA® Consultoría de Gestión</p>
+      <p>© 2025 ÁRBOLA® Consultoría de Gestión · <a href="privacidad/">Privacidad</a></p>
       <a href="#inicio">Volver arriba ↑</a>
     </div>
   </footer>
@@ -773,6 +773,8 @@
             cForm.reset();
             cStatus.className = 'form-status ok';
             cStatus.textContent = '¡Gracias! Recibimos tu mensaje y te vamos a responder a la brevedad.';
+            // Cuenta el contacto en Analytics, igual que los formularios de ERP y 3R
+            if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: 'contacto_consultora' });
           } else {
             const data = await res.json().catch(() => ({}));
             cStatus.className = 'form-status err';
