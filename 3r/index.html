@@ -163,7 +163,7 @@
           <span class="pill pill-borde">Versión independiente</span>
           <h3>¿Usás otro sistema? Sumate igual</h3>
           <p>ÁRBOLA 3R funciona por su cuenta, para empresas de cualquier rubro y tamaño.</p>
-          <a href="mailto:hola@arbola.com.ar?subject=Consulta%20%C3%81RBOLA%203R" class="btn btn-fill">Consultanos</a>
+          <a href="#consulta" class="btn btn-fill">Consultanos</a>
         </article>
       </div>
     </div>
@@ -205,13 +205,62 @@
   </section>
 
   <!-- CIERRE -->
-  <section class="cta-band">
-    <div class="wrap">
-      <div>
+  <section class="cta-band demo-band" id="consulta">
+    <div class="wrap demo-grid">
+      <div class="demo-text">
         <h2>Tu material de rezago suma</h2>
         <p>Contanos qué materiales tenés sin uso y te mostramos cómo empezar.</p>
       </div>
-      <a href="mailto:hola@arbola.com.ar?subject=Consulta%20%C3%81RBOLA%203R" class="btn btn-crema">Escribinos</a>
+
+      <form class="contact-form demo-form js-form" id="consultaForm" action="https://formsubmit.co/ajax/hola@arbola.com.ar" method="POST" data-evento="consulta_3r" data-gracias="¡Gracias por tu interés en ÁRBOLA 3R! Ya recibimos tu consulta.">
+        <input type="hidden" name="_subject" value="Consulta ÁRBOLA 3R">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="rf-nombre">Nombre y apellido</label>
+            <input id="rf-nombre" name="Nombre" type="text" required placeholder="Tu nombre" />
+          </div>
+          <div class="field">
+            <label for="rf-empresa">Empresa</label>
+            <input id="rf-empresa" name="Empresa" type="text" required placeholder="Nombre de tu empresa" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="rf-email">Email</label>
+            <input id="rf-email" name="Email" type="email" required placeholder="tu@email.com" />
+          </div>
+          <div class="field">
+            <label for="rf-tel">Teléfono <span class="opt">(opcional)</span></label>
+            <input id="rf-tel" name="Teléfono" type="tel" placeholder="+54 9 11 ..." />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="rf-rubro">Rubro</label>
+          <select id="rf-rubro" name="Rubro" required>
+            <option value="" disabled selected>Elegí una opción</option>
+            <option>Industria</option>
+            <option>Comercio</option>
+            <option>Distribución</option>
+            <option>Construcción</option>
+            <option>Servicios</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="rf-msg">¿Qué materiales tenés sin uso?</label>
+          <textarea id="rf-msg" name="Materiales" rows="3" required placeholder="Recortes, saldos de producción, mobiliario, equipos…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-fill form-submit">Enviar consulta</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -266,6 +315,6 @@
     </div>
   </div>
 
-  <script src="../paginas.js?v=5"></script>
+  <script src="../paginas.js?v=6"></script>
 </body>
 </html>

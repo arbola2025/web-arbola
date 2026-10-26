@@ -51,7 +51,7 @@
 })();
 
 (function () {
-  // ── FORMULARIOS (pedido de demo) — mismo envío que el contacto del inicio ──
+  // ── FORMULARIOS (demo del ERP y consulta de 3R) — mismo envío que el contacto del inicio ──
   document.querySelectorAll('.js-form').forEach(function (form) {
     const status = form.querySelector('.form-status');
     const btn = form.querySelector('.form-submit');
@@ -67,13 +67,13 @@
         if (res.ok) {
           form.reset();
           status.className = 'form-status ok';
-          status.textContent = '¡Gracias por tu interés en ÁRBOLA ERP! Ya recibimos tu pedido.';
+          status.textContent = form.dataset.gracias;
           // Cuenta el pedido en Analytics (respeta lo que la persona eligió en el aviso de cookies)
           if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: form.dataset.evento });
         } else {
           const data = await res.json().catch(() => ({}));
           status.className = 'form-status err';
-          status.textContent = data.message || 'No pudimos enviar el pedido. Por favor, probá de nuevo en unos minutos.';
+          status.textContent = data.message || 'No pudimos enviar el formulario. Por favor, probá de nuevo en unos minutos.';
         }
       } catch (err) {
         status.className = 'form-status err';
