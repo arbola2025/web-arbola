@@ -62,23 +62,28 @@
       const label = btn.textContent;
       btn.disabled = true;
       btn.textContent = 'Enviando…';
+      // Si el servicio de envío falla o tarda más de 20 segundos, se ofrece escribir por mail o WhatsApp
+      const ALTERNATIVA = 'El envío está demorando. Escribinos a <a href="mailto:hola@arbola.com.ar">hola@arbola.com.ar</a> o por WhatsApp al <a href="https://wa.me/5492236882898" target="_blank" rel="noopener">223 688-2898</a> y te respondemos.';
+      const corte = new AbortController();
+      const reloj = setTimeout(function () { corte.abort(); }, 20000);
       try {
-        const res = await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
-        if (res.ok) {
+        const res = await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form), signal: corte.signal });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && String(data.success) !== 'false') {
           form.reset();
           status.className = 'form-status ok';
           status.textContent = form.dataset.gracias;
           // Cuenta el pedido en Analytics (respeta lo que la persona eligió en el aviso de cookies)
           if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: form.dataset.evento });
         } else {
-          const data = await res.json().catch(() => ({}));
           status.className = 'form-status err';
-          status.textContent = data.message || 'No pudimos enviar el formulario. Por favor, probá de nuevo en unos minutos.';
+          status.innerHTML = ALTERNATIVA;
         }
       } catch (err) {
         status.className = 'form-status err';
-        status.textContent = 'Hubo un problema de conexión. Por favor, probá de nuevo.';
+        status.innerHTML = ALTERNATIVA;
       } finally {
+        clearTimeout(reloj);
         btn.disabled = false;
         btn.textContent = label;
       }
