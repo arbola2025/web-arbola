@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página no encontrada — ÁRBOLA</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/img/favicon.png?v=1" />
+  <link rel="apple-touch-icon" href="/img/favicon.png?v=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=38" />
+  <link rel="stylesheet" href="/paginas.css?v=18" />
+  <style>
+    /* Página de error: se sirve en cualquier dirección que no existe, por eso todas las rutas son absolutas */
+    .e404 {
+      min-height: calc(100vh - 80px);
+      background: var(--crema) url('/img/degrade-crema-teal-naranja.jpg') center top / cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+      padding: 5rem 1.5rem; text-align: center; color: var(--azul);
+    }
+    .e404-inner { max-width: 880px; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+    .e404-num { font-size: clamp(5rem, 14vw, 9rem); font-weight: 700; letter-spacing: -6px; line-height: .9; color: var(--naranja); }
+    .e404 h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -1.5px; color: var(--azul); margin: 0; }
+    .e404-sub { margin: 0; font-size: 1.2rem; font-style: italic; color: var(--gris); }
+    .e404-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; width: 100%; margin-top: 1.6rem; }
+    .e404-links a {
+      display: flex; flex-direction: column; gap: .35rem; text-align: left; text-decoration: none;
+      background: var(--blanco); border: 1px solid var(--borde); border-radius: 20px; padding: 1.4rem 1.5rem;
+      color: var(--azul); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .e404-links a:hover { transform: translateY(-3px); border-color: var(--naranja); box-shadow: 0 14px 30px rgba(38,92,103,.14); }
+    .e404-links strong { font-size: 1.15rem; }
+    .e404-links span { font-size: .95rem; color: var(--gris); line-height: 1.4; }
+    .e404-links em { font-style: normal; color: var(--naranja); font-weight: 700; margin-top: .4rem; }
+    @media (max-width: 760px) { .e404-links { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="subpage">
+
+  <!-- NAVBAR -->
+  <header class="navbar scrolled solid" id="navbar">
+    <a href="/" class="logo"><img src="/img/logo-oficial.png?v=2" alt="ÁRBOLA" class="logo-img" /></a>
+    <nav class="nav-links">
+      <a href="/">Consultora</a>
+      <a href="/erp/">ÁRBOLA ERP</a>
+      <a href="/3r/">ÁRBOLA 3R</a>
+      <a href="/#contacto" class="nav-cta">Contacto</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="/">Consultora</a>
+    <a href="/erp/">ÁRBOLA ERP</a>
+    <a href="/3r/">ÁRBOLA 3R</a>
+    <a href="/#contacto">Contacto</a>
+  </nav>
+
+  <main class="e404">
+    <div class="e404-inner">
+      <span class="e404-num" aria-hidden="true">404</span>
+      <h1>Volvamos al plano</h1>
+      <p class="e404-sub">Esta dirección quedó fuera del mapa. Elegí por dónde seguir.</p>
+      <div class="e404-links">
+        <a href="/"><strong>Consultora</strong><span>Gestión, dirección de proyectos y capacitación para PyMEs.</span><em>Ir al inicio →</em></a>
+        <a href="/erp/"><strong>ÁRBOLA ERP</strong><span>El sistema de gestión pensado para constructoras.</span><em>Conocer ERP →</em></a>
+        <a href="/3r/"><strong>ÁRBOLA 3R</strong><span>Una segunda vida para tu material de rezago.</span><em>Conocer 3R →</em></a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2025 ÁRBOLA® Consultoría de Gestión</p>
+      <a href="mailto:hola@arbola.com.ar">hola@arbola.com.ar</a>
+    </div>
+  </footer>
+
+  <script src="/paginas.js?v=6"></script>
+</body>
+</html>
