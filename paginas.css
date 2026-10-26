@@ -70,6 +70,8 @@ body.subpage { padding-top: 99px; }
 /* El botón con borde lleva fondo crema: en celular cae sobre el teal */
 .p-hero.claro .btn-borde { background: var(--crema); }
 .p-hero.claro .btn-borde:hover { background: var(--azul); color: var(--crema); }
+.r-hero .btn-borde { background: var(--crema); }
+.r-hero .btn-borde:hover { background: var(--azul); }
 .p-hero-inner { position: relative; max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
 .p-hero h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); line-height: 1.05; letter-spacing: -1.5px; color: var(--crema); }
 .p-hero .p-hero-sub { font-size: 1.2rem; font-style: italic; color: var(--crema); max-width: 720px; margin: 0; }
@@ -163,7 +165,9 @@ body.subpage { padding-top: 99px; }
 
 /* ─── 3R · PORTADA ─── */
 /* Degradé A-GRA2 del manual: crema arriba (texto) y naranja hacia abajo */
-.r-hero { background: var(--crema) url('img/degrade-crema-naranja.jpg') center 15% / cover no-repeat; padding: 5rem 3.5rem; }
+.r-hero { background: var(--crema) url('img/degrade-crema-naranja.jpg') center 15% / cover no-repeat; padding: 5rem 3.5rem; position: relative; isolation: isolate; }
+/* Del lado derecho el degradé sube más, para que el naranja se vea alrededor de la foto */
+.r-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url('img/degrade-crema-naranja.jpg') center 40% / cover no-repeat; -webkit-mask-image: linear-gradient(to right, transparent 30%, rgba(0,0,0,.6) 55%, #000 75%); mask-image: linear-gradient(to right, transparent 30%, rgba(0,0,0,.6) 55%, #000 75%); }
 .r-hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .r-hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: 1.4rem; }
 .r-hero h1 { font-size: clamp(2.4rem, 4.6vw, 3.8rem); line-height: 1.05; letter-spacing: -1.5px; color: var(--azul); }
