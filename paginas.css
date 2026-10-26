@@ -54,6 +54,16 @@ body.subpage { padding-top: 99px; }
    ERP. Crema arriba con el texto en azul; teal y naranja hacia abajo. */
 .p-hero.claro { background: var(--crema) url('img/degrade-crema-teal-naranja.jpg') center top / cover no-repeat; color: var(--azul); }
 .p-hero.claro::before { background: none; }
+/* En computadora, el mismo degradé espejado del lado izquierdo, esfumado
+   hacia el centro para no tapar el texto */
+@media (min-width: 901px) {
+  .p-hero.claro::before {
+    background: url('img/degrade-crema-teal-naranja.jpg') center top / cover no-repeat;
+    transform: scaleX(-1);
+    -webkit-mask-image: linear-gradient(to left, #000 0%, rgba(0,0,0,.6) 25%, transparent 50%);
+            mask-image: linear-gradient(to left, #000 0%, rgba(0,0,0,.6) 25%, transparent 50%);
+  }
+}
 .p-hero.claro h1 { color: var(--azul); }
 .p-hero.claro .p-hero-sub { color: var(--gris); }
 .p-hero.claro .p-hero-note { color: var(--negro); }
