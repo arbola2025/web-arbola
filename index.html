@@ -763,27 +763,33 @@
         const label = cBtn.textContent;
         cBtn.disabled = true;
         cBtn.textContent = 'Enviando…';
+        // Si el servicio de envío falla o tarda más de 20 segundos, se ofrece escribir por mail o WhatsApp
+        const ALTERNATIVA = 'El envío está demorando. Escribinos a <a href="mailto:hola@arbola.com.ar">hola@arbola.com.ar</a> o por WhatsApp al <a href="https://wa.me/5492236882898" target="_blank" rel="noopener">223 688-2898</a> y te respondemos.';
+        const corte = new AbortController();
+        const reloj = setTimeout(() => corte.abort(), 20000);
         try {
           const res = await fetch(cForm.action, {
             method: 'POST',
             headers: { 'Accept': 'application/json' },
-            body: new FormData(cForm)
+            body: new FormData(cForm),
+            signal: corte.signal
           });
-          if (res.ok) {
+          const data = await res.json().catch(() => ({}));
+          if (res.ok && String(data.success) !== 'false') {
             cForm.reset();
             cStatus.className = 'form-status ok';
             cStatus.textContent = '¡Gracias! Recibimos tu mensaje y te vamos a responder a la brevedad.';
             // Cuenta el contacto en Analytics, igual que los formularios de ERP y 3R
             if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: 'contacto_consultora' });
           } else {
-            const data = await res.json().catch(() => ({}));
             cStatus.className = 'form-status err';
-            cStatus.textContent = data.message || 'No pudimos enviar el mensaje. Por favor, probá de nuevo en unos minutos.';
+            cStatus.innerHTML = ALTERNATIVA;
           }
         } catch (err) {
           cStatus.className = 'form-status err';
-          cStatus.textContent = 'Hubo un problema de conexión. Por favor, probá de nuevo.';
+          cStatus.innerHTML = ALTERNATIVA;
         } finally {
+          clearTimeout(reloj);
           cBtn.disabled = false;
           cBtn.textContent = label;
         }
