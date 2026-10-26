@@ -1277,3 +1277,33 @@ strong { font-weight: 600; }
   .diag-steps.anim::before { transform-origin: center top; transform: scaleY(0); }
   .diag-steps.anim.drawn::before { transform: none; }
 }
+
+/* ─── WHATSAPP: globito fijo abajo a la derecha, con menú de las dos sedes ─── */
+.wa { position: fixed; right: 1.4rem; bottom: 1.4rem; z-index: 300; }
+.wa-btn {
+  list-style: none; cursor: pointer; width: 60px; height: 60px; border-radius: 50%;
+  background: var(--naranja); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 26px rgba(38, 92, 103, .32); transition: transform .2s ease, background .2s ease;
+}
+.wa-btn::-webkit-details-marker { display: none; }
+.wa-btn:hover { transform: translateY(-3px); background: var(--azul); }
+.wa-btn:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+.wa-btn svg { width: 30px; height: 30px; fill: var(--blanco); }
+.wa-menu {
+  position: absolute; right: 0; bottom: 76px; width: 250px; background: var(--blanco);
+  border-radius: 18px; padding: 1rem; box-shadow: 0 18px 44px rgba(38, 92, 103, .25);
+  display: flex; flex-direction: column; gap: .5rem;
+}
+.wa-tit { margin: 0 0 .2rem; font-size: .8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); }
+.wa-menu a {
+  display: flex; flex-direction: column; padding: .7rem .9rem; border-radius: 12px;
+  border: 1px solid var(--borde); color: var(--azul); text-decoration: none; transition: background .2s, border-color .2s;
+}
+.wa-menu a:hover { background: var(--crema); border-color: var(--naranja); }
+.wa-menu strong { font-size: 1rem; }
+.wa-menu span { font-size: .9rem; color: var(--gris); }
+@media (max-width: 600px) {
+  .wa { right: 1rem; bottom: 1rem; }
+  .wa-btn { width: 54px; height: 54px; }
+  .wa-btn svg { width: 27px; height: 27px; }
+}
