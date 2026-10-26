@@ -67,7 +67,7 @@
         if (res.ok) {
           form.reset();
           status.className = 'form-status ok';
-          status.textContent = '¡Gracias! Recibimos tu pedido y te vamos a escribir para coordinar la demo.';
+          status.textContent = '¡Gracias por tu interés en ÁRBOLA ERP! Ya recibimos tu pedido.';
           // Cuenta el pedido en Analytics (respeta lo que la persona eligió en el aviso de cookies)
           if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: form.dataset.evento });
         } else {
