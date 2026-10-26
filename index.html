@@ -367,10 +367,8 @@
         <p class="contact-book-label">o escribinos y te respondemos</p>
       </div>
 
-      <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/hola@arbola.com.ar" method="POST">
-        <input type="hidden" name="_subject" value="Nuevo contacto desde la web de ÁRBOLA">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
+      <form class="contact-form" id="contactForm" action="https://script.google.com/macros/s/AKfycbwKO56KZGZzhFxhhltB1hlgMHiqUapdPGf1nW6JZFUpRnx5ZxAB5I3ZoAP2-9FqQJxgFw/exec" method="POST">
+        <input type="hidden" name="formulario" value="contacto_consultora">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="form-row">
@@ -763,33 +761,20 @@
         const label = cBtn.textContent;
         cBtn.disabled = true;
         cBtn.textContent = 'Enviando…';
-        // Si el servicio de envío falla o tarda más de 20 segundos, se ofrece escribir por mail o WhatsApp
-        const ALTERNATIVA = 'El envío está demorando. Escribinos a <a href="mailto:hola@arbola.com.ar">hola@arbola.com.ar</a> o por WhatsApp al <a href="https://wa.me/5492236882898" target="_blank" rel="noopener">223 688-2898</a> y te respondemos.';
-        const corte = new AbortController();
-        const reloj = setTimeout(() => corte.abort(), 20000);
+        // Las consultas van a la planilla de Google de hola@arbola.com.ar (Apps Script), que además avisa por mail
         try {
-          const res = await fetch(cForm.action, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: new FormData(cForm),
-            signal: corte.signal
-          });
-          const data = await res.json().catch(() => ({}));
-          if (res.ok && String(data.success) !== 'false') {
-            cForm.reset();
-            cStatus.className = 'form-status ok';
-            cStatus.textContent = '¡Gracias! Recibimos tu mensaje y te vamos a responder a la brevedad.';
-            // Cuenta el contacto en Analytics, igual que los formularios de ERP y 3R
-            if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: 'contacto_consultora' });
-          } else {
-            cStatus.className = 'form-status err';
-            cStatus.innerHTML = ALTERNATIVA;
-          }
+          const res = await fetch(cForm.action, { method: 'POST', body: new URLSearchParams(new FormData(cForm)) });
+          const data = await res.json();
+          if (!data.success) throw new Error('sin confirmar');
+          cForm.reset();
+          cStatus.className = 'form-status ok';
+          cStatus.textContent = '¡Gracias! Recibimos tu mensaje y te vamos a responder a la brevedad.';
+          // Cuenta el contacto en Analytics, igual que los formularios de ERP y 3R
+          if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: 'contacto_consultora' });
         } catch (err) {
           cStatus.className = 'form-status err';
-          cStatus.innerHTML = ALTERNATIVA;
+          cStatus.innerHTML = 'No pudimos enviar el mensaje. Probá de nuevo o escribinos a <a href="mailto:hola@arbola.com.ar">hola@arbola.com.ar</a>.';
         } finally {
-          clearTimeout(reloj);
           cBtn.disabled = false;
           cBtn.textContent = label;
         }
