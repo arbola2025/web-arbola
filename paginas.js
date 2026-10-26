@@ -62,28 +62,20 @@
       const label = btn.textContent;
       btn.disabled = true;
       btn.textContent = 'Enviando…';
-      // Si el servicio de envío falla o tarda más de 20 segundos, se ofrece escribir por mail o WhatsApp
-      const ALTERNATIVA = 'El envío está demorando. Escribinos a <a href="mailto:hola@arbola.com.ar">hola@arbola.com.ar</a> o por WhatsApp al <a href="https://wa.me/5492236882898" target="_blank" rel="noopener">223 688-2898</a> y te respondemos.';
-      const corte = new AbortController();
-      const reloj = setTimeout(function () { corte.abort(); }, 20000);
+      // Las consultas van a la planilla de Google de hola@arbola.com.ar (Apps Script), que además avisa por mail
       try {
-        const res = await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form), signal: corte.signal });
-        const data = await res.json().catch(() => ({}));
-        if (res.ok && String(data.success) !== 'false') {
-          form.reset();
-          status.className = 'form-status ok';
-          status.textContent = form.dataset.gracias;
-          // Cuenta el pedido en Analytics (respeta lo que la persona eligió en el aviso de cookies)
-          if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: form.dataset.evento });
-        } else {
-          status.className = 'form-status err';
-          status.innerHTML = ALTERNATIVA;
-        }
+        const res = await fetch(form.action, { method: 'POST', body: new URLSearchParams(new FormData(form)) });
+        const data = await res.json();
+        if (!data.success) throw new Error('sin confirmar');
+        form.reset();
+        status.className = 'form-status ok';
+        status.textContent = form.dataset.gracias;
+        // Cuenta el pedido en Analytics (respeta lo que la persona eligió en el aviso de cookies)
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: form.dataset.evento });
       } catch (err) {
         status.className = 'form-status err';
-        status.innerHTML = ALTERNATIVA;
+        status.innerHTML = 'No pudimos enviar el formulario. Probá de nuevo o escribinos a <a href="mailto:hola@arbola.com.ar">hola@arbola.com.ar</a>.';
       } finally {
-        clearTimeout(reloj);
         btn.disabled = false;
         btn.textContent = label;
       }
