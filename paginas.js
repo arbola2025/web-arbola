@@ -1,4 +1,4 @@
-// Comportamiento compartido de las páginas de producto (ÁRBOLA ERP y ÁRBOLA 3R).
+// Comportamiento compartido de las páginas de producto (ÁRBOLA TAC y ÁRBOLA 3R).
 // Es el mismo menú de celular y el mismo banner de cookies que usa index.html.
 
 (function () {
@@ -51,7 +51,7 @@
 })();
 
 (function () {
-  // ── FORMULARIOS (demo del ERP y consulta de 3R) — mismo envío que el contacto del inicio ──
+  // ── FORMULARIOS (demo del TAC y consulta de 3R) — mismo envío que el contacto del inicio ──
   document.querySelectorAll('.js-form').forEach(function (form) {
     const status = form.querySelector('.form-status');
     const btn = form.querySelector('.form-submit');

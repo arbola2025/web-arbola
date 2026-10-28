@@ -1,4 +1,4 @@
-/* ─── PÁGINAS DE PRODUCTO (ÁRBOLA ERP y ÁRBOLA 3R) ───
+/* ─── PÁGINAS DE PRODUCTO (ÁRBOLA TAC y ÁRBOLA 3R) ───
    Se cargan después de styles.css y reusan sus variables, botones,
    etiquetas, menú y footer. */
 
@@ -30,7 +30,7 @@ body.subpage { padding-top: 99px; }
 .pill-teal { background: var(--teal); color: var(--negro); }
 .pill-borde { background: var(--crema); border-color: var(--naranja); color: var(--azul); }
 
-/* ─── ERP · PORTADA ─── */
+/* ─── TAC · PORTADA ─── */
 .p-hero {
   position: relative;
   overflow: hidden;
@@ -44,14 +44,14 @@ body.subpage { padding-top: 99px; }
   content: "";
   position: absolute;
   inset: 0;
-  /* Como el menú del ERP: el degradé se ve a pleno y solo se oscurece hacia
+  /* Como el menú del TAC: el degradé se ve a pleno y solo se oscurece hacia
      abajo; un velo azul suave queda detrás del texto para que se lea */
   background:
     radial-gradient(ellipse 62% 46% at 50% 30%, rgba(38,92,103,.86) 0%, rgba(38,92,103,.78) 55%, rgba(38,92,103,0) 100%),
     linear-gradient(to bottom, rgba(38,92,103,0) 0%, rgba(38,92,103,.25) 45%, rgba(38,92,103,.7) 100%);
 }
-/* Variante clara (ERP): degradé A-GRA4 del manual, como el menú lateral del
-   ERP. Crema arriba con el texto en azul; teal y naranja hacia abajo. */
+/* Variante clara (TAC): degradé A-GRA4 del manual, como el menú lateral del
+   TAC. Crema arriba con el texto en azul; teal y naranja hacia abajo. */
 .p-hero.claro { background: var(--crema) url('img/degrade-crema-teal-naranja.jpg') center top / cover no-repeat; color: var(--azul); }
 .p-hero.claro::before { background: none; }
 /* En computadora, el mismo degradé espejado del lado izquierdo, esfumado
@@ -113,7 +113,7 @@ body.subpage { padding-top: 99px; }
 .status-card { background: var(--blanco); border-radius: 18px; padding: 1.5rem 1.6rem; display: flex; flex-direction: column; gap: .6rem; }
 .status-card p { margin: 0; font-size: 1rem; line-height: 1.55; }
 
-/* ─── ERP · FRANJA 3R ─── */
+/* ─── TAC · FRANJA 3R ─── */
 /* Mismo espacio arriba y abajo: la franja queda centrada en su sección */
 .band-sec { padding: 4.5rem 3.5rem; }
 .band-3r {
@@ -137,7 +137,7 @@ body.subpage { padding-top: 99px; }
 .band-3r h3 { font-size: 1.9rem; line-height: 1.15; color: var(--azul); margin: .4rem 0 .5rem; }
 .band-3r p { margin: 0; max-width: 780px; color: var(--negro); line-height: 1.55; }
 
-/* ─── ERP · POR QUÉ ─── */
+/* ─── TAC · POR QUÉ ─── */
 .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
 .why-item { display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.4rem 1.5rem; border-radius: 18px; background: rgba(246,244,238,.1); }
 .why-item + .why-item { margin-top: .9rem; }
@@ -160,7 +160,7 @@ body.subpage { padding-top: 99px; }
 .cta-band .wrap { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 2rem 3rem; flex-wrap: wrap; }
 .cta-band h2 { color: var(--crema); text-transform: uppercase; letter-spacing: -1px; line-height: 1.05; }
 .cta-band p { margin: .6rem 0 0; color: var(--crema); font-style: italic; font-size: 1.1rem; }
-/* Pedido de demo del ERP: texto a la izquierda, formulario en tarjeta a la derecha */
+/* Pedido de demo del TAC: texto a la izquierda, formulario en tarjeta a la derecha */
 .demo-band { padding: 6rem 3.5rem; scroll-margin-top: 80px; }
 .cta-band .demo-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 4rem; align-items: center; }
 .demo-pasos { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-direction: column; gap: .9rem; }

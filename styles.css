@@ -58,11 +58,11 @@ a { text-decoration: none; color: inherit; }
 .navbar.scrolled .logo-on-light { display: block; }
 
 .nav-links { display: flex; align-items: center; gap: 2.5rem; }
-/* Separa las secciones de la consultora de las páginas de ERP y 3R */
+/* Separa las secciones de la consultora de las páginas de TAC y 3R */
 .nav-sep { width: 1px; height: 22px; background: rgba(255,255,255,.35); }
 .navbar.scrolled .nav-sep { background: var(--borde); }
 @media (max-width: 1280px) { .nav-links { gap: 1.8rem; } }
-/* Con ERP y 3R el menú ya no entra en pantallas medianas: pasa a hamburguesa */
+/* Con TAC y 3R el menú ya no entra en pantallas medianas: pasa a hamburguesa */
 @media (max-width: 1100px) {
   .nav-links   { display: none; }
   .menu-toggle { display: flex; }
