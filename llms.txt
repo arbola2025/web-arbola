@@ -1,0 +1,66 @@
+# ÁRBOLA Consultoría de Gestión
+
+> ÁRBOLA es una consultora de gestión para PyMEs de la industria de la construcción en Argentina. Un equipo de ingenieros acompaña a constructoras, desarrolladoras, empresas de instalaciones y empresas de materiales a ordenar sus procesos, dirigir sus proyectos y formar a sus equipos para crecer con previsibilidad.
+
+ÁRBOLA trabaja con PyMEs que crecieron y necesitan ordenar su forma de organizarse, cuando las decisiones se concentran en las mismas personas y la información de cada proyecto queda repartida. El trabajo empieza con un diagnóstico de cómo funciona hoy la empresa y sigue con un plan concreto, aplicado junto al equipo y adaptado a su ritmo.
+
+Lema de la marca "Raíces firmes, gestión sostenible."
+
+## Servicios de consultoría
+
+- [Gestión y procesos](https://arbola.com.ar/#que-hacemos) — ordenamos los procesos internos, los roles y la toma de decisiones para que la empresa opere con orden y eficiencia.
+- [Dirección de proyectos](https://arbola.com.ar/#que-hacemos) — planificación y control de avance, costos y plazos de cada proyecto, con buenas prácticas de dirección de proyectos.
+- [Capacitación](https://arbola.com.ar/#que-hacemos) — formación en gestión y dirección de proyectos para equipos, jefes de proyecto y mandos medios.
+- [Diagnóstico](https://arbola.com.ar/#diagnostico) — primera reunión sin costo para entender cómo trabaja hoy la empresa y definir por dónde conviene empezar.
+
+## Productos
+
+- [ÁRBOLA TAC](https://arbola.com.ar/tac/) — solución para la digitalización de empresas de la construcción, desarrollada por ingenieros. TAC viene de tiempo, alcance y costo, las líneas base para medir un proyecto. Integra planificación, erogaciones y certificaciones en un mismo sistema, y cada dato se carga una sola vez.
+- [ÁRBOLA 3R](https://arbola.com.ar/3r/) — programa para reducir, reutilizar y reciclar el material de rezago. Conecta empresas de cualquier industria con escuelas, comedores y cooperativas que necesitan esos materiales, con trazabilidad de cada donación para que la empresa pueda solicitar la deducción en el Impuesto a las Ganancias, de hasta el 5% de la ganancia neta del ejercicio.
+
+## ÁRBOLA TAC en detalle
+
+ÁRBOLA TAC sigue el recorrido de cada proyecto en cuatro etapas, y cada etapa toma la información de la anterior.
+
+1. Planificar la cartera de proyectos — cada proyecto se registra con su cliente, su responsable, la ubicación, las fechas de inicio y fin, y un código propio. El cómputo de materiales arma la estructura de trabajo (WBS). El presupuesto interno muestra el costo de cada ítem en materiales, mano de obra e insumos, con su incidencia sobre el total. El presupuesto para el cliente suma gastos generales, beneficio e impuestos hasta el precio de venta, con revisiones numeradas. También registra contratos con clientes y subcontratistas, con sus hojas de avance.
+2. Cargar el día a día — partes diarios con las horas de operarios y cuadrillas de cada proyecto. Pañol con stock por depósito, salidas de material con código QR y pedidos de retiro desde el proyecto. Compras con cotizaciones, órdenes de compra, facturas y acopios vinculados a cada proyecto. Gastos generales prorrateados entre los proyectos como costo indirecto. Bienes de uso, como herramientas y vehículos, con su amortización sumada al costo de cada proyecto.
+3. Controlar con el segmento PMO — compara lo planificado con lo real y avisa cuando detecta desvíos. Incluye línea base aprobada y congelada, diagrama de Gantt planificado contra real, camino crítico y estimación PERT, valor ganado (PV, EV, AC), índices CPI y SPI, costo final estimado (EAC), matriz de riesgos con reservas de contingencia y un centro de control con semáforo de costo y plazo, alertas de sobrecosto y atraso, y cierres mensuales. Un paso a paso guiado acompaña al usuario en seis etapas.
+4. Ver el resultado en Finanzas — certificados de avance para el cliente, caja y bancos, cuenta corriente de cada proveedor, libro IVA Compras y retenciones listos para el contador, y resultado por proyecto, que compara lo certificado con lo consumido para mostrar el margen real y el desvío contra el presupuesto.
+
+En todo el sistema rige un cambio controlado, con datos bloqueados que se modifican a través de una matriz de autorización. Cada persona ve y edita solo sus secciones, la información se archiva en lugar de borrarse y cada sección se exporta a Excel y PDF con historial de cambios. Desde el menú se entra a ÁRBOLA 3R para donar el material de rezago de cada proyecto.
+
+### Planes
+
+- Plan Gestión, para llevar los proyectos día a día — incluye cartera de proyectos, carga del día a día, finanzas con resultado por proyecto y conexión con ÁRBOLA 3R.
+- Plan Dirección, para dirigir proyectos — suma a lo anterior el segmento PMO con línea base, Gantt, camino crítico, valor ganado, riesgos y centro de control.
+
+El segmento PMO y ÁRBOLA 3R se lanzan en 2027. Las empresas que se suman antes del lanzamiento acceden a condiciones especiales.
+
+### Servicio y acompañamiento
+
+- Funciona desde el navegador, en la oficina y en el proyecto, sobre infraestructura de AWS.
+- Cada empresa cuenta con soporte técnico exclusivo.
+- La implementación empieza con un diagnóstico y una reunión de lanzamiento, sigue con la firma del contrato, un relevamiento del trabajo actual con el equipo de dirección y cada sector, y una matriz de responsabilidades que define los roles dentro del sistema.
+- Próximas incorporaciones con mensajería interna, carga de facturas con inteligencia artificial y conexión con ARCA.
+- El sistema ordena la información fiscal, y las presentaciones y criterios impositivos quedan a cargo del contador de cada empresa. Registra operaciones formales y declaradas.
+- Las donaciones comprobadas en ÁRBOLA 3R respaldan además la certificación Empresa 3R, que distingue a las empresas recurrentes, responsables y regenerativas.
+
+## Equipo
+
+- Germán Cabral — Ingeniero Civil, especialista en dirección de proyectos, MBA y PMP®.
+- Micaela Pokorny — Ingeniera Civil, especialista en dirección de proyectos.
+- Vicente Constantino Pizzorno — Ingeniero Mecánico y Electromecánico, MBA.
+
+## Contacto
+
+- Correo hola@arbola.com.ar
+- WhatsApp Mar del Plata +54 9 223 688-2898
+- WhatsApp Buenos Aires +54 9 11 3126-5891
+- [Agendar una reunión](https://calendar.app.google/tUJkov3j9fUSfVse8)
+- [LinkedIn](https://www.linkedin.com/company/arbolaconsultora)
+- [Instagram](https://www.instagram.com/somosarbola/)
+
+## Más información
+
+- [Sitio web](https://arbola.com.ar/)
+- [Política de privacidad](https://arbola.com.ar/privacidad/)
