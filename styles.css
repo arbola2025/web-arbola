@@ -14,7 +14,7 @@
   --fondo:   #f6f4ee;
   /* Frases y textos especiales. El manual pide The Seasons, que no tiene
      licencia web: DM Serif Display (libre) es la serif de la familia DM */
-  --serif: 'DM Serif Display', Georgia, serif;
+  --serif: 'Playfair Display', Georgia, serif;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 110px; }
